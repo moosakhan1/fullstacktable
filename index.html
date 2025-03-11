@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Full Stack Development Timetable</title>
+    <style>
+        :root {
+            --bg-color: #f0f0f0;
+            --text-color: #333;
+            --table-bg: #fff;
+            --table-border: #ddd;
+            --header-bg: #4CAF50;
+            --header-color: white;
+            --frontend-bg: #e6f3ff;
+            --backend-bg: #fff2cc;
+            --database-bg: #e6ffe6;
+            --framework-bg: #ffe6e6;
+            --project-bg: #e6e6ff;
+            --review-bg: #f2e6ff;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --table-bg: #2c2c2c;
+            --table-border: #444;
+            --header-bg: #2e7d32;
+            --header-color: #f0f0f0;
+            --frontend-bg: #1a2a3a;
+            --backend-bg: #3a3a2a;
+            --database-bg: #2a3a2a;
+            --framework-bg: #3a2a2a;
+            --project-bg: #2a2a3a;
+            --review-bg: #3a2a3a;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-color);
+            animation: fadeIn 1s ease-out;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: var(--table-bg);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--table-border);
+            padding: 12px;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        th {
+            background-color: var(--header-bg);
+            color: var(--header-color);
+        }
+
+        .frontend {
+            background-color: var(--frontend-bg);
+        }
+
+        .backend {
+            background-color: var(--backend-bg);
+        }
+
+        .database {
+            background-color: var(--database-bg);
+        }
+
+        .framework {
+            background-color: var(--framework-bg);
+        }
+
+        .project {
+            background-color: var(--project-bg);
+        }
+
+        .review {
+            background-color: var(--review-bg);
+        }
+
+        td:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #darkModeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: var(--header-bg);
+            color: var(--header-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animated Full Stack Development Timetable</h1>
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>09:00 - 10:30</td>
+                <td class="frontend">HTML &amp; CSS Basics</td>
+                <td class="frontend">JavaScript Fundamentals</td>
+                <td class="frontend">Bootstrap Framework</td>
+                <td class="frontend">Tailwind CSS</td>
+                <td class="frontend">TypeScript Basics</td>
+                <td class="project">Personal Project</td>
+                <td class="review">Weekly Review</td>
+            </tr>
+            <tr>
+                <td>10:30 - 11:00</td>
+                <td colspan="7">Break</td>
+            </tr>
+            <tr>
+                <td>11:00 - 12:30</td>
+                <td class="frontend">Advanced CSS Techniques</td>
+                <td class="frontend">JavaScript DOM Manipulation</td>
+                <td class="frontend">Responsive Design with Bootstrap</td>
+                <td class="frontend">Advanced Tailwind CSS</td>
+                <td class="frontend">TypeScript with React</td>
+                <td class="project">Personal Project</td>
+                <td class="frontend">Frontend Code Challenges</td>
+            </tr>
+            <tr>
+                <td>12:30 - 14:00</td>
+                <td colspan="7">Lunch Break</td>
+            </tr>
+            <tr>
+                <td>14:00 - 15:30</td>
+                <td class="framework">React.js Basics</td>
+                <td class="framework">React.js Hooks</td>
+                <td class="framework">Next.js Fundamentals</td>
+                <td class="framework">Next.js Routing &amp; API</td>
+                <td class="framework">React Native Basics</td>
+                <td class="project">React/Next.js Project</td>
+                <td class="review">Code Review &amp; Refactoring</td>
+            </tr>
+            <tr>
+                <td>15:30 - 16:00</td>
+                <td colspan="7">Break</td>
+            </tr>
+            <tr>
+                <td>16:00 - 17:30</td>
+                <td class="backend">Node.js Basics</td>
+                <td class="backend">Express.js Routing</td>
+                <td class="backend">Node.js Async Programming</td>
+                <td class="backend">Express.js Middleware</td>
+                <td class="backend">API Development</td>
+                <td class="project">Backend Project</td>
+                <td class="backend">Backend Code Challenges</td>
+            </tr>
+            <tr>
+                <td>17:30 - 18:00</td>
+                <td class="review">Daily Review</td>
+                <td class="review">Daily Review</td>
+                <td class="review">Daily Review</td>
+                <td class="review">Daily Review</td>
+                <td class="review">Daily Review</td>
+                <td class="project">Project Planning</td>
+                <td class="review">Weekly Planning</td>
+            </tr>
+            <tr>
+                <td>18:00 - 19:30</td>
+                <td class="database">MongoDB Basics</td>
+                <td class="database">MongoDB CRUD Operations</td>
+                <td class="database">MongoDB Aggregation</td>
+                <td class="database">MongoDB with Node.js</td>
+                <td class="database">Database Design</td>
+                <td class="project">Full Stack Project</td>
+                <td class="project">Open Source Contribution</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+        });
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+
+</html>
